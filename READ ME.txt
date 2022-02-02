@@ -1,0 +1,20 @@
+::IMPORTANT FILE::
+Proses CRUD Datatables ada dalam folder : assets/datatables/
+JS : assets/datatables/js
+- table.absensi.js
+- table.karyawan.js
+PHP : assets/datatables/php
+- table.absensi.php
+- table.karyawan.php
+config koneksi CRUD datatables : assets/datatables/php/lib/config.php
+
+::DATABASE::
+- Menu Rekap absensi
+table `tahunbulan` adalah table yang penting untuk menampilkan rekap absensi, table ini memiliki field tahun,bulan,jumlah
+value jumlah sesuaikan dengan total hari pada tahun->bulan tsb.
+*contoh januari & februari sudah ada, tinggal di teruskan.
+
+table `setting_status` adalah table yang penting untuk di gunakan merubah status jam absen
+value pada kolom status di ambil dari table `status_absen`.id
+
+-- file absensi.sql ada dalam folder sql --
