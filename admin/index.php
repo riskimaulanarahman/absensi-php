@@ -106,6 +106,14 @@ $result = mysqli_fetch_assoc($query);
 	              			</p>
 	            		</a>
 	          		</li>
+					<li class="nav-item">
+	            		<a href="index.php?page=kegiatankaryawan" class="nav-link">
+	            			<i class="nav-icon fas fa-book"></i>
+	              			<p>
+	                			Kegiatan Karyawan
+	              			</p>
+	            		</a>
+	          		</li>
 	          		<li class="nav-item">
 	            		<a href="index.php?page=datakaryawan" class="nav-link">
 	              			<i class="nav-icon fas fa-user-tie"></i>
@@ -167,7 +175,10 @@ $id     = $_SESSION['id'];
 				break;
 			case 'datakaryawan':
 				include "../admin/data-karyawan/index.php";
-				break;		
+				break;	
+			case 'kegiatankaryawan':
+                include "../admin/absensi/kegiatan.php";
+				break;	
 			default:
 				echo "<center><h3>Maaf. Halaman tidak di temukan !</h3></center>";
 				break;

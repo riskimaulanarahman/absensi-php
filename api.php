@@ -50,7 +50,15 @@ switch ($_GET['case']) {
                     if($rcekrfid['rfid'] !== null) {
 
                         $sql = "UPDATE absensi SET jam_istirahat='$timenow' WHERE rfid = $rfid AND tanggal='$datenow' ";
-                        if (mysqli_query($conn, $sql)) {
+                        $questat2 = mysqli_query($conn, $sql);
+
+                        $rquestat2 = mysqli_query($conn,"SELECT * from absensi WHERE rfid = $rfid AND tanggal='$datenow' ");
+
+                        $resultk = mysqli_fetch_assoc($rquestat2);
+                        $absensi_id = $resultk['id'];
+
+                        $sql1 = "INSERT INTO kegiatan (absensi_id,`status`,kegiatan) VALUES ($absensi_id,'$status','$kegiatan')";
+                        if (mysqli_query($conn, $sql1)) {
                             // echo "Berhasil Absen";
                             echo json_encode(array("status"=>200));
                             
@@ -109,14 +117,22 @@ switch ($_GET['case']) {
                 } else {
                     if($rcekrfid['rfid'] !== null) {
                     
-                        $sql = "UPDATE absensi SET jam_pulang='$timenow', kegiatan='$kegiatan' WHERE rfid = $rfid AND tanggal='$datenow' ";
-                        if (mysqli_query($conn, $sql)) {
+                        $sql = "UPDATE absensi SET jam_pulang='$timenow' WHERE rfid = $rfid AND tanggal='$datenow' ";
+                        $questat4 = mysqli_query($conn, $sql);
+
+                        $rquestat4 = mysqli_query($conn,"SELECT * from absensi WHERE rfid = $rfid AND tanggal='$datenow' ");
+
+                        $resultk = mysqli_fetch_assoc($rquestat4);
+                        $absensi_id = $resultk['id'];
+
+                        $sql1 = "INSERT INTO kegiatan (absensi_id,`status`,kegiatan) VALUES ($absensi_id,'$status','$kegiatan')";
+                        if (mysqli_query($conn, $sql1)) {
                             // echo "Berhasil Absen";
                             echo json_encode(array("status"=>200));
                             
                         } else {
-                            // echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-                            echo json_encode(array("status"=>404));
+                            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                            // echo json_encode(array("status"=>404));
                             
                         }
                     } else {

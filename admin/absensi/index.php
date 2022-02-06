@@ -23,7 +23,7 @@
 								<th>jam_istirahat</th>
 								<th>jam_kembali</th>
 								<th>jam_pulang</th>
-								<th>kegiatan</th>
+								<!-- <th>kegiatan</th> -->
 							</tr>
 						</thead>
 					</table>

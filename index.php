@@ -114,7 +114,7 @@
       $('#idstatus').val(item.status)
       $('.cekstatus').text(item.nama_status)
 
-      if(item.status == 4) {
+      if(item.status == 4 || item.status == 2) {
         $('#divkegiatan').prop('hidden',false)
       }
     })
@@ -128,13 +128,13 @@
     // $("#inputkegiatan").prop('required',true);
 
 
-    if(idstatus == 4) {
+    if(idstatus == 4 || idstatus == 2) {
       var url = 'api.php?case=absensi&status='+idstatus+'&rfid='+rfid+'&kegiatan='+kegiatan;
     } else {
       var url = 'api.php?case=absensi&status='+idstatus+'&rfid='+rfid;
     }
 
-    if(idstatus == 4 && (kegiatan == null || kegiatan == '')) {
+    if((idstatus == 4 || idstatus == 2) && (kegiatan == null || kegiatan == '')) {
       alert('kegiatan harus di isi')
     } else {
 
@@ -142,13 +142,13 @@
         console.log(item)
         if(item.status == 200) {
             alert('Absen Berhasil')
-            setTimeout(function(){window.location.reload();}, 1000);
+            // setTimeout(function(){window.location.reload();}, 1000);
         } else if(item.status == 404) {
             alert('Gagal Absen') 
-            setTimeout(function(){window.location.reload();}, 1000);
+            // setTimeout(function(){window.location.reload();}, 1000);
         } else if(item.status == 500) {
             alert('Anda Sudah Absen')
-            setTimeout(function(){window.location.reload();}, 1000);
+            // setTimeout(function(){window.location.reload();}, 1000);
         } else if(item.status == 505) {
             alert('rfid Tidak Ditemukan')
         } else {
@@ -163,6 +163,6 @@
 
   checkstatus();
   setInterval(showTime, 100);
-  setTimeout(function(){window.location.reload();}, 20000);
+  // setTimeout(function(){window.location.reload();}, 20000);
  
 </script>

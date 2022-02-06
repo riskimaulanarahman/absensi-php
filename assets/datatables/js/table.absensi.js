@@ -53,11 +53,11 @@ $(document).ready(function() {
 				"type": "datetime",
 				"format": "HH:mm"
 			},
-			{
-				"label": "kegiatan:",
-				"name": "kegiatan",
-				"type": "textarea"
-			}
+			// {
+			// 	"label": "kegiatan:",
+			// 	"name": "kegiatan",
+			// 	"type": "textarea"
+			// }
 		]
 	} );
 
@@ -89,9 +89,9 @@ $(document).ready(function() {
 			{
 				"data": "jam_pulang"
 			},
-			{
-				"data": "kegiatan"
-			}
+			// {
+			// 	"data": "kegiatan"
+			// }
 		],
 		select: true,
 		lengthChange: false,

@@ -69,7 +69,7 @@
                 <th>NIDN</th>
                 <th>Nama User</th>
                 <th>Total Kehadiran</th>
-                <th>Persentase Kehadiran</th>
+                <!-- <th>Persentase Kehadiran</th> -->
                 <th>Total Ketidakhadiran</th>
               </tr>
             </thead>
@@ -106,7 +106,7 @@
             { "data": "nidn" },
             { "data": "nama" },
             { "data": "total_kehadiran" },
-            { "data": "presentase_kehadiran" },
+            // { "data": "presentase_kehadiran" },
             { "data": "total_ketidakhadiran" }
         ],
       buttons: [
@@ -145,7 +145,7 @@
                   { "data": "nidn" },
                   { "data": "nama" },
                   { "data": "total_kehadiran" },
-                  { "data": "presentase_kehadiran" },
+                  // { "data": "presentase_kehadiran" },
                   { "data": "total_ketidakhadiran" }
               ],
             buttons: [
